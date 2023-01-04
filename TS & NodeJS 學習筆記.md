@@ -16,14 +16,13 @@
    - "outDir": "./dst",
    - "rootDir": "./src",
 10. 設定 package.json：
-
-```json
-	  "scripts": {
-	    "test": "echo \"Error: no test specified\" && exit 1",
-	    "build": "tsc",
-	    "start": "node ./dst/"
-	  }
-```
+    ```json
+    "scripts": {
+    	    "test": "echo \"Error: no test specified\" && exit 1",
+    	    "build": "tsc",
+    	    "start": "node ./dst/"
+    	  }
+    ```
 
 <br>
 
@@ -65,8 +64,8 @@ nodejs 有相當多的版本，在公司或團隊內可能會依專案的新、�
   multiple node js version on the same machine
   [https://www.loginradius.com/blog/engineering/run-multiple-nodejs-version-on-the-same-machine/](https://www.loginradius.com/blog/engineering/run-multiple-nodejs-version-on-the-same-machine/)
 
-
 ---
-<br>  
+
+<br>
 
 [返回目錄](https://github.com/BricL/ericsplayground/blob/main/README.md)
