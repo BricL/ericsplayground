@@ -1,4 +1,4 @@
-# 初始化 TS 專案在 vscode
+## 初始化 TS 專案在 vscode
 
 1. install nvm
 2. using nvm install nodeJS (Recommand stable version)
@@ -26,7 +26,7 @@
 
 <br>
 
-# NVM 讓一台電腦可以安裝多個版本的 NodeJS
+## NVM 讓一台電腦可以安裝多個版本的 NodeJS
 
 nodejs 有相當多的版本，在公司或團隊內可能會依專案的新、舊或客戶需求而採不同版本，如果使用官方表準安裝，就只能在一台電腦上安裝一個版本，遇到專案不同版本的狀況切換環境就會相當不便利，因此誕生了 NVM 套件。<br>
 
@@ -39,7 +39,7 @@ nodejs 有相當多的版本，在公司或團隊內可能會依專案的新、�
 > * nvm list-remote，列出目前可用的遠端版本
 >   <br><br>
 
-# 遇到的問題
+## 遇到的問題
 
 1. **Mac 10.15後，安裝需要注意**
    Since macOS 10.15, the default shell is zsh and
@@ -56,7 +56,7 @@ nodejs 有相當多的版本，在公司或團隊內可能會依專案的新、�
 
 <br>
 
-# 參考資源
+## 參考資源
 
 * 官方github
   [https://github.com/nvm-sh/nvm#installing-and-updating](https://github.com/nvm-sh/nvm#installing-and-updating)
