@@ -1,4 +1,4 @@
-## 初始化 TS 專案在 vscode
+# 初始化 TS 專案在 vscode
 
 1. install nvm
 2. using nvm install nodeJS (Recommand stable version)
@@ -14,7 +14,7 @@
 9. 設定 tsconfig.json：
    - "sourceMap": true,
    - "outDir": "./dst",
-   - "rootDir": "./src",  
+   - "rootDir": "./src",
 10. 設定 package.json：
 
 ```json
@@ -22,5 +22,52 @@
 	    "test": "echo \"Error: no test specified\" && exit 1",
 	    "build": "tsc",
 	    "start": "node ./dst/"
-	  },
+	  }
 ```
+
+# NVM 讓一台電腦可以安裝多個版本的 NodeJS
+
+nodejs 有相當多的版本，在公司或團隊內可能會依專案的新、舊或客戶需求而採不同版本，如果使用官方表準安裝，就只能在一台電腦上安裝一個版本，遇到專案不同版本的狀況切換環境就會相當不便利，因此誕生了 NVM 套件。
+
+
+
+## 基本指令：
+
+* nvm install {{版本號}}，安裝指定版
+* nvm alias default {{版本號}}，設定預設開啟的版本
+* nvm use {{版本號}}，指定當前使用的版本
+* nvm list，列出本地端所安裝的版本
+* nvm list-remote，列出目前可用的遠端版本
+
+
+
+# 遇到的問題
+
+### **Mac 10.15後，安裝需要注意**
+
+Since macOS 10.15, the default shell is zsh and
+nvm will look for .zshrc to update, none is installed by default. Create one
+with touch ~/.zshrc and run the install script again.
+
+### **每次開啟新的 Console 時都需要重新設定 nvm use node，不然無法使用**
+
+npm 或 node 指令
+
+要每次開啟 console 都讓 nvm 自動設定好預設版本的 node，請設定以下指令：
+
+`<span>nvm alias default node</span>`
+
+` `
+
+這樣每次開啟新的 console 時就不會認不得 node、npm 指令。如果在 vscode 在 debug 時遇到無法啟動，有很高的“機率”是這個沒有設定。
+
+## 參考資源
+
+* 官方github
+
+[https://github.com/nvm-sh/nvm#installing-and-updating](https://github.com/nvm-sh/nvm#installing-and-updating)
+
+* How do I install
+  multiple node js version on the same machine
+
+[https://www.loginradius.com/blog/engineering/run-multiple-nodejs-version-on-the-same-machine/](https://www.loginradius.com/blog/engineering/run-multiple-nodejs-version-on-the-same-machine/)
