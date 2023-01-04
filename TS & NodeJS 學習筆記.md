@@ -58,11 +58,11 @@ nodejs 有相當多的版本，在公司或團隊內可能會依專案的新、�
 
 ## 參考資源
 
-* 官方github
-  [https://github.com/nvm-sh/nvm#installing-and-updating](https://github.com/nvm-sh/nvm#installing-and-updating)
+* 官方github  
+[https://github.com/nvm-sh/nvm#installing-and-updating](https://github.com/nvm-sh/nvm#installing-and-updating)
 * How do I install
-  multiple node js version on the same machine
-  [https://www.loginradius.com/blog/engineering/run-multiple-nodejs-version-on-the-same-machine/](https://www.loginradius.com/blog/engineering/run-multiple-nodejs-version-on-the-same-machine/)
+multiple node js version on the same machine  
+[https://www.loginradius.com/blog/engineering/run-multiple-nodejs-version-on-the-same-machine/](https://www.loginradius.com/blog/engineering/run-multiple-nodejs-version-on-the-same-machine/)
 
 ---
 
