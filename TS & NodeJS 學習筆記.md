@@ -69,4 +69,4 @@ nodejs 有相當多的版本，在公司或團隊內可能會依專案的新、�
 ---
 <br>  
 
-[<p align="right">返回目錄</p>](https://github.com/BricL/ericsplayground/blob/main/README.md)
+[返回目錄](https://github.com/BricL/ericsplayground/blob/main/README.md)
