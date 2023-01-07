@@ -1,4 +1,4 @@
-## 初始化 TS 專案在 vscode
+## :sunny:初始化 TS 專案在 vscode
 
 >1. install nvm
 >2. using nvm install nodeJS (Recommand stable version)
@@ -28,7 +28,7 @@
 >    npm run start //啟動程序   
 >    ```
 
-## NVM 讓電腦安裝多個版本的 NodeJS
+## :sunny:NVM 讓電腦安裝多個版本的 NodeJS
 
 nodejs 有相當多的版本，在公司或團隊內可能會依專案的新、舊或客戶需求而採不同版本，如果使用官方表準安裝，就只能在一台電腦上安裝一個版本，遇到專案不同版本的狀況切換環境就會相當不便利，因此誕生了 NVM 套件。   
 
@@ -63,7 +63,7 @@ nodejs 有相當多的版本，在公司或團隊內可能會依專案的新、�
 multiple node js version on the same machine  
 [https://www.loginradius.com/blog/engineering/run-multiple-nodejs-version-on-the-same-machine/](https://www.loginradius.com/blog/engineering/run-multiple-nodejs-version-on-the-same-machine/)
 
-## NodeJs SimpleHttpServer 套件  
+## :sunny:NodeJs SimpleHttpServer 套件  
 可在本地端簡單架設一個 Http server 並指定 host 的資料夾位置，可以用來模擬 CDN 讓 Unity 可以在本地端或 Local LAN 下，測試下載 AssetBundles 用。  
 
 若安裝時進行“全域”安裝：
