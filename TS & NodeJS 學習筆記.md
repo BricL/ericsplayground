@@ -22,14 +22,10 @@
     	"start": "node ./dst/"
     }
     ```
-    這樣就可以執行  
+    這樣就可以執行    
 
-    ```c
-    npm run build //執行TS編譯  
-
-    npm run start //啟動程序
-    ```
-<br>
+    >npm run build //執行TS編譯  
+    >npm run start //啟動程序   
 
 ## NVM 讓電腦安裝多個版本的 NodeJS
 
@@ -45,7 +41,8 @@ nodejs 有相當多的版本，在公司或團隊內可能會依專案的新、�
 >   <br><br>
 
 ### 遇到的問題
-1. **Mac 10.15後，安裝需要注意**
+1. **Mac 10.15後，安裝需要注意**   
+
    Since macOS 10.15, the default shell is zsh and
    nvm will look for .zshrc to update, none is installed by default. Create one
    with touch ~/.zshrc and run the install script again.
@@ -54,11 +51,10 @@ nodejs 有相當多的版本，在公司或團隊內可能會依專案的新、�
    要每次開啟 console 都讓 nvm 自動設定好預設版本的 node，請設定以下指令：
 
    > nvm alias default node
-   >
 
-   這樣每次開啟新的 console 時就不會認不得 node、npm 指令。如果在 vscode 在 debug 時遇到無法啟動，有很高的“機率”是這個沒有設定。
+   這樣每次開啟新的 console 時就不會認不得 node、npm 指令。<span style="color:red">如果在 vscode 在 debug 時遇到無法啟動，有很高的“機率”是這個沒有設定</span>。
 
-## 參考資源
+### 參考資源
 
 * 官方github  
 [https://github.com/nvm-sh/nvm#installing-and-updating](https://github.com/nvm-sh/nvm#installing-and-updating)
@@ -66,6 +62,19 @@ nodejs 有相當多的版本，在公司或團隊內可能會依專案的新、�
 multiple node js version on the same machine  
 [https://www.loginradius.com/blog/engineering/run-multiple-nodejs-version-on-the-same-machine/](https://www.loginradius.com/blog/engineering/run-multiple-nodejs-version-on-the-same-machine/)
 
+## NodeJs SimpleHttpServer 套件  
+可在本地端簡單架設一個 Http server 並指定 host 的資料夾位置，可以用來模擬 CDN 讓 Unity 可以在本地端或 Local LAN 下，測試下載 AssetBundles 用。  
+
+若安裝時進行“全域”安裝：
+>npm install simplehttpserver -g  
+
+這樣未來在 console 下只需要鍵入以下指令，就能啟動功能：  
+
+>./simplehttpserver ~/temp
+
+### 參考資源
+* npm 套件頁面  
+https://www.npmjs.com/package/simplehttpserver?activeTab=readme
 ---
 
 <br>
