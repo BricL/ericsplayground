@@ -76,6 +76,10 @@ multiple node js version on the same machine
 ### 參考資源
 * npm 套件頁面  
 https://www.npmjs.com/package/simplehttpserver?activeTab=readme
+
+## :sunny:mySQL 套件  
+
+## :sunny:ORM 套件
 ---
 
 <br>
