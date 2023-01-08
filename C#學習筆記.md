@@ -23,4 +23,10 @@ https://ithelp.ithome.com.tw/articles/10288591?sc=iThelpR
 * REFLECTION-使用反射執行方法的7種方式
 https://blog.kkbruce.net/2017/01/reflection-method-invoke-7-ways.html
 * C# - Reflection
-https://www.tutorialspoint.com/csharp/csharp_reflection.htm
+https://www.tutorialspoint.com/csharp/csharp_reflection.htm   
+
+---
+
+<br>
+
+[返回目錄](https://github.com/BricL/ericsplayground/blob/main/README.md)
