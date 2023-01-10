@@ -25,6 +25,23 @@ https://blog.kkbruce.net/2017/01/reflection-method-invoke-7-ways.html
 * C# - Reflection  
 https://www.tutorialspoint.com/csharp/csharp_reflection.htm   
 
+## :sunny:C# 字串內插補點$ + string
+以前在用C#處理字串中有變數時，已經習慣使用這種：
+
+```csharp
+string.Format("My name is {0}, I am {1} years old", szName, nAge)
+```
+
+但前一陣子在使用 Javascript 時，有看到可以用`xxxx`(非 single quote，Esc 下面那個)來夾住字串，中間可以直接填變數的寫法。
+
+C#6 之後的版本也有類似的用法了，以後在填字串時可以直覺一些用法很簡單，在 "xxxx" 前加上$，例如：
+
+```csharp
+string.Format("My name is {0}, I am {1} years old", szName, nAge); 
+// 可以寫成
+$"My name is {szName}, I am {nAge} years old"
+```
+
 ---
 
 <br>
