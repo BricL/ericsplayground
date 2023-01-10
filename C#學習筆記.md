@@ -42,6 +42,22 @@ string.Format("My name is {0}, I am {1} years old", szName, nAge);
 $"My name is {szName}, I am {nAge} years old"
 ```
 
+## :sunny:C# 7.0 Function Return 多個值
+```csharp
+private static (int ab1, int ab2) Add_Multiply (int a, int b) {
+    return (a + b, a * b);
+}
+
+static void Main (string[] args) {
+    int a = 10;
+    int b = 20;
+    (int a_plus_b, int a_mult_b) = Add_Multiply(a, b);
+    Console.WriteLine(a_plus_b);
+    Console.WriteLine(a_mult_b);
+}
+```
+
+
 ---
 
 <br>
