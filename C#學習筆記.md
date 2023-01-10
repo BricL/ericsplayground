@@ -1,3 +1,11 @@
+# 目錄：
+* [C# Reflection](#1)  
+* [C# 字串內插補點$ + string](#2)  
+* [C# 7.0 Function Return 多個值](#3)  
+
+---
+<span id="1"></span>  
+
 ## :sunny:C#  Reflection
 .NET Framework 有二次編譯的概念，為了不同平台上使用，加上一層中間層，更靈活：
 
@@ -25,6 +33,8 @@ https://blog.kkbruce.net/2017/01/reflection-method-invoke-7-ways.html
 * C# - Reflection  
 https://www.tutorialspoint.com/csharp/csharp_reflection.htm   
 
+<span id="2"></span>  
+
 ## :sunny:C# 字串內插補點$ + string
 以前在用C#處理字串中有變數時，已經習慣使用這種：
 
@@ -41,6 +51,7 @@ string.Format("My name is {0}, I am {1} years old", szName, nAge);
 // 可以寫成
 $"My name is {szName}, I am {nAge} years old"
 ```
+<span id="3"></span>  
 
 ## :sunny:C# 7.0 Function Return 多個值
 ```csharp
