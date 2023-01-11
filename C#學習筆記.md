@@ -72,7 +72,8 @@ static void Main (string[] args) {
 <span id="4"></span>  
 
 ## :sunny:C#  gRPC 
-套件功能說明：
+
+### 套件功能說明：
 * gRPC Core
 最底層的實作
 * gRPC C# API
