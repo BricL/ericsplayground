@@ -2,6 +2,7 @@
 * [C# Reflection](#1)  
 * [C# 字串內插補點$ + string](#2)  
 * [C# 7.0 Function Return 多個值](#3)  
+* [C# gRPC](#4) 
 
 ---
 <span id="1"></span>  
@@ -68,6 +69,61 @@ static void Main (string[] args) {
 }
 ```
 
+<span id="4"></span>  
+
+## :sunny:C#  gRPC 
+* gRPC Core
+最底層的實作
+* gRPC C# API
+在gRPC Core之上的包裝，貼近NET開發者使用
+* Grpc.Net.Client
+在gRPC C# API之上的包裝，最貼近NET開發者使用
+* Grpc.Tools
+gRPC and Protocol Buffer compiler for managed C# and native C++ projects.
+* Google.Protobuf
+
+### protoc 編譯器
+主要編譯 .proto 檔中 message 編譯成目標語言，如：Person.proto >> Person.cs。
+
+### grpc_cshapr_plugin 外掛器
+Protoc 在 c# 的編譯上並不支持 service 關鍵字 (service定義遠端 funcion call 的呼叫)，因此需要NuGet上
+下載一個外掛 grpc tools (裡面包含 grpc_cshapr_plugin.exe) 來完成 service 的編譯。
+
+呈上，因此一個 Person.proto 檔案在編譯後會出現兩個檔案：
+1. Person.cs (定義傳輸資料)
+2. PersonGrpc.cs (定義遠端function call的呼叫) 在 Unity 與 Server 採 gRPC 連線下，用戶端同時需要這兩個檔案。  
+   
+### Sample：
+Test.proto 範例
+```csharp
+	syntax = "proto3";
+	option csharp_namespace = "GrpcGreeter";
+	package greet;
+	// The greeting service definition.
+	service Greeter {
+	  // Sends a greeting
+	  rpc SayHello (HelloRequest) returns (HelloReply);
+	}
+	// The request message containing the user's name.
+	message HelloRequest {
+	  string name = 1;
+	}
+	// The response message containing the greetings.
+	message HelloReply {
+	  string message = 1;
+	}
+```
+編譯指令
+>tools\protoc.exe  -I protos protos\test.proto  
+>--csharp_out=output   
+>--grpc_out=output  
+>--plugin=protoc-gen-grpc=tools\grpc_csharp_plugin.exe 
+   	
+### 結論：
+由此可知，上海 Jenkins 流程中有一段是專門針對 .proto 進行打包的部分，大致推測如下：
+1. protoc 編譯
+2. grpc_csharp_pluing 編譯
+3. 將上述所有 *.cs 進行 *.dll 打包
 
 ---
 
