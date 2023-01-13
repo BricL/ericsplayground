@@ -93,7 +93,7 @@ var reply = await client.SayHelloAsync( new HelloRequest { Name = "GreeterClient
 
 從上面的範例看來，是不是完全不像跟 “服務端” 發出請求吧！一切就像個本地非同步 function 呼叫，這就是 PRC(Remote Procedure Call) 的精神。
 
-### Protobuf:
+### Protobuf：
 
 由 Google 主導，一種描述式語法用來描述傳輸間的資料結構。有別於JSON的文字格式，Protobuf 在經過編譯(Protobuf Compiler)後，可以成為任何語言(JAVA、C#、Go...etc）的型別定義，藉此達到 序列化/反序列化，讓傳輸採資料更小速、度更快的二進位格式。
 
@@ -129,7 +129,7 @@ message HelloReply {
 
 這些定義再透過 Protobuf Compiler 編譯後，就能成為你指定想要使用的語言 class 與 funciton 定義。客戶端與服務端的實踐，可以是不同語言，但彼此間的溝通與傳輸的資料定義，都會遵守上面 *.proto 描述的定義。
 
-### service
+### service：
 
 作為一個 Remote Function Call 的定義，在經過編譯後會分別對 “客戶端”、“服務端” 產生 2 種不同的 Type。
 
@@ -192,7 +192,7 @@ message HelloReply {
   Console.ReadKey();
   ```
 
-### message
+### message：
 
 根據 *.proto 中的定義，透過編譯轉變成目標語言的 Type，且具備序列化WriteTo()/反序列化 Paser.PaseFrom() 的能力。
 
