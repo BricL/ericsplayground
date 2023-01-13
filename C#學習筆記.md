@@ -129,7 +129,7 @@ message HelloReply {
 
 這些定義再透過 Protobuf Compiler 編譯後，就能成為你指定想要使用的語言 class 與 funciton 定義。客戶端與服務端的實踐，可以是不同語言，但彼此間的溝通與傳輸的資料定義，都會遵守上面 *.proto 描述的定義。
 
-### Service
+### service
 
 作為一個 Remote Function Call 的定義，在經過編譯後會分別對 “客戶端”、“服務端” 產生 2 種不同的 Type。
 
@@ -182,7 +182,7 @@ message HelloReply {
 * 會生成一個呼叫 RPC 的類別，透過給予連線設定進行建立，然後呼叫等待結果
   ```csharp
   // The port number must match the port of the gRPC server.
-  using var channel = GrpcChannel.ForAddress("https://localhost:7042");
+  var channel = GrpcChannel.ForAddress("https://localhost:7042");
   var client = new Greeter.GreeterClient(channel);
 
   var reply = await client.SayHelloAsync(new HelloRequest { Name = "GreeterClient" });
@@ -191,6 +191,28 @@ message HelloReply {
   Console.WriteLine("Press any key to exit...");
   Console.ReadKey();
   ```
+
+### message
+
+根據 *.proto 中的定義，透過編譯轉變成目標語言的 Type，且具備序列化WriteTo()/反序列化 Paser.PaseFrom() 的能力。
+
+```csharp
+using Google.Protobuf;
+...
+Person john = ...; // Code as before
+using (var output = File.Create("john.dat"))
+{
+    john.WriteTo(output);
+}
+```
+
+```csharp
+Person john;
+using (var input = File.OpenRead("john.dat"))
+{
+    john = Person.Parser.ParseFrom(input);
+}
+```
 
 ### 套件功能說明：
 
