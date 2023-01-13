@@ -1,42 +1,50 @@
 # 目錄：
-* [C# Reflection](#1)  
-* [C# 字串內插補點$ + string](#2)  
-* [C# 7.0 Function Return 多個值](#3)  
-* [C# gRPC](#4) 
+
+* [C# Reflection](#1)
+* [C# 字串內插補點$ + string](#2)
+* [C# 7.0 Function Return 多個值](#3)
+* [C# gRPC](#4)
 
 ---
-<span id="1"></span>  
+
+<span id="1"></span>
 
 ## :sunny:C#  Reflection
+
 .NET Framework 有二次編譯的概念，為了不同平台上使用，加上一層中間層，更靈活：
 
 1. 透過VS編譯器　編譯成dll/exe
 2. 點擊exe的時候，他有一個依賴的環境叫做CLR
-3. dll/exe裡面包含兩大塊 IL（中間語言），metadata（元數據）      
+3. dll/exe裡面包含兩大塊 IL（中間語言），metadata（元數據）
 
 metadata會紀錄這 dll/exe 裡面有哪些東西，而反射主要在做這塊。
 
 ### 優點：
+
 1. 反射提高了程序的靈活性和擴展性。
 2. 降低耦合性，提高自適應能力。
 3. 它允許程式創建和控制任何類的物件，無需提前硬編碼目標類。
+
 ### 缺点：
+
 1. 性能問題：使用反射基本上是一種解釋操作，用於字段和方法接入時要遠慢於直接代碼。 因此反射機制主要應用在對靈活性和拓展性要求很高的系統框架上，普通程式不建議使用。
 2. 使用反射會模糊程序內部邏輯; 程式師希望在原始程式碼中看到程式的邏輯，反射卻繞過了原始程式碼的技術，因而會帶來維護的問題，反射代碼比相應的直接代碼更複雜。
 
 ### 參考資源：
-* C# 反射（Reflection)   
-https://www.runoob.com/csharp/csharp-reflection.html
-* 玩轉C#之【反射 Reflection 射爆妳】  
-https://ithelp.ithome.com.tw/articles/10288591?sc=iThelpR
-* REFLECTION-使用反射執行方法的7種方式  
-https://blog.kkbruce.net/2017/01/reflection-method-invoke-7-ways.html
-* C# - Reflection  
-https://www.tutorialspoint.com/csharp/csharp_reflection.htm   
 
-<span id="2"></span>  
+* C# 反射（Reflection)
+  https://www.runoob.com/csharp/csharp-reflection.html
+* 玩轉C#之【反射 Reflection 射爆妳】
+  https://ithelp.ithome.com.tw/articles/10288591?sc=iThelpR
+* REFLECTION-使用反射執行方法的7種方式
+  https://blog.kkbruce.net/2017/01/reflection-method-invoke-7-ways.html
+* C# - Reflection
+  https://www.tutorialspoint.com/csharp/csharp_reflection.htm
+
+<span id="2"></span>
 
 ## :sunny:C# 字串內插補點$ + string
+
 以前在用C#處理字串中有變數時，已經習慣使用這種：
 
 ```csharp
@@ -52,9 +60,11 @@ string.Format("My name is {0}, I am {1} years old", szName, nAge);
 // 可以寫成
 $"My name is {szName}, I am {nAge} years old"
 ```
-<span id="3"></span>  
+
+<span id="3"></span>
 
 ## :sunny:C# 7.0 Function Return 多個值
+
 ```csharp
 private static (int ab1, int ab2) Add_Multiply (int a, int b) {
     return (a + b, a * b);
@@ -69,34 +79,88 @@ static void Main (string[] args) {
 }
 ```
 
-<span id="4"></span>  
+<span id="4"></span>
 
-## :sunny:C#  gRPC 
+## :sunny:C#  gRPC
+
+### RPC 定義：
+
+PRC(Remote Procedure Call) 簡單說就是 “用戶端” 在與 “服務端” 溝通時，感覺就像在呼叫本地端的 API 一樣，依據 funcion 定義傳入所需參數，等待回覆結果，如下：
+
+```csharp
+var reply = await client.SayHelloAsync( new HelloRequest { Name = "GreeterClient" });
+```
+
+從上面的範例看來，是不是完全不像跟遠端 “服務器” 發需求對吧！一切就像呼叫個非同步 API，這就是 PRC(Remote Procedure Call) 的精神。
+
+### Protobuf:
+
+由 Google 主導，一種描述式語法用來描述傳輸間的資料結構。有別於JSON的文字格式，Protobuf 在經過編譯(Protobuf Compiler)後，可以成為任何語言(JAVA、C#、Go...etc）的型別定義，藉此達到 序列化/反序列化，讓傳輸採資料更小速、度更快的二進位格式。
+
+一個 Greeter.proto 的範例如下：
+
+```protobuf
+syntax = "proto3";
+
+option csharp_namespace = "GrpcGreeter";
+
+package greet;
+
+// The greeting service definition.
+service Greeter {
+  // Sends a greeting
+  rpc SayHello (HelloRequest) returns (HelloReply);
+}
+
+// The request message containing the user's name.
+message HelloRequest {
+  string name = 1;
+}
+
+// The response message containing the greetings.
+message HelloReply {
+  string message = 1;
+}
+```
+
+這裡 Greeter.proto 中定義了：
+
+* message HelloRequest，向服務器端發出請求的格式
+* message HelloReply，回覆客戶端請求的回覆格式
+* service Greeter，一個 RPC 的 funciton call 的定義
+
+這些定義再透過 Protobuf Compiler 編譯後，就能成為你指定想要使用的語言 class 與 funciton 定義。客戶端與服務端的實踐，可以是不同語言，但彼此間的溝通與傳輸的資料定義，都會遵守上面 *.proto 描述的定義。
 
 ### 套件功能說明：
+
 * gRPC Core
-最底層的實作
+  最底層的實作
 * gRPC C# API
-在gRPC Core之上的包裝，貼近NET開發者使用
+  在gRPC Core之上的包裝，貼近NET開發者使用
 * Grpc.Net.Client
-在gRPC C# API之上的包裝，最貼近NET開發者使用
+  在gRPC C# API之上的包裝，最貼近NET開發者使用
 * Grpc.Tools
-gRPC and Protocol Buffer compiler for managed C# and native C++ projects.
+  gRPC and Protocol Buffer compiler for managed C# and native C++ projects.
 * Google.Protobuf
 
 ### protoc 編譯器
+
 主要編譯 .proto 檔中 message 編譯成目標語言，如：Person.proto >> Person.cs。
 
 ### grpc_cshapr_plugin 外掛器
+
 Protoc 在 c# 的編譯上並不支持 service 關鍵字 (service定義遠端 funcion call 的呼叫)，因此需要NuGet上
 下載一個外掛 grpc tools (裡面包含 grpc_cshapr_plugin.exe) 來完成 service 的編譯。
 
 呈上，因此一個 Person.proto 檔案在編譯後會出現兩個檔案：
+
 1. Person.cs (定義傳輸資料)
-2. PersonGrpc.cs (定義遠端function call的呼叫) 在 Unity 與 Server 採 gRPC 連線下，用戶端同時需要這兩個檔案。  
-   
+2. PersonGrpc.cs (定義遠端function call的呼叫) 在 Unity 與 Server 採 gRPC 連線下，用戶端同時需要這兩個檔案。
+
 ### Sample：
+
 Test.proto 範例
+
 ```csharp
 	syntax = "proto3";
 	option csharp_namespace = "GrpcGreeter";
@@ -115,14 +179,18 @@ Test.proto 範例
 	  string message = 1;
 	}
 ```
+
 編譯指令
->tools\protoc.exe  -I protos protos\test.proto  
->--csharp_out=output   
->--grpc_out=output  
->--plugin=protoc-gen-grpc=tools\grpc_csharp_plugin.exe 
-   	
+
+> tools\protoc.exe  -I protos protos\test.proto
+> --csharp_out=output
+> --grpc_out=output
+> --plugin=protoc-gen-grpc=tools\grpc_csharp_plugin.exe
+
 ### 結論：
+
 由此可知，上海 Jenkins 流程中有一段是專門針對 .proto 進行打包的部分，大致推測如下：
+
 1. protoc 編譯
 2. grpc_csharp_pluing 編譯
 3. 將上述所有 *.cs 進行 *.dll 打包
