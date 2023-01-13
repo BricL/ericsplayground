@@ -145,7 +145,7 @@ message HelloReply {
   {
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::System.Threading.Tasks.Task<global::myGrpcTesting.HelloR
-  eply>   SayHello(global::myGrpcTesting.HelloRequest request, grpc::ServerCallContext context)
+  eply> SayHello(global::myGrpcTesting.HelloRequest request, grpc::ServerCallContext context)
       {
           throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -161,6 +161,7 @@ message HelloReply {
   public class GreeterService : Greeter.GreeterBase
   {
       private readonly ILogger<GreeterService> _logger;
+
       public GreeterService(ILogger<GreeterService> logger)
       {
           _logger = logger;
