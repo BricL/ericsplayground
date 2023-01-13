@@ -226,11 +226,11 @@ using (var input = File.OpenRead("john.dat"))
   gRPC and Protocol Buffer compiler for managed C# and native C++ projects.
 * Google.Protobuf
 
-### protoc 編譯器
+### protoc 編譯器：
 
 主要編譯 .proto 檔中 message 編譯成目標語言，如：Person.proto >> Person.cs。
 
-### grpc_cshapr_plugin 外掛器
+### grpc_cshapr_plugin 外掛器：
 
 Protoc 在 c# 的編譯上並不支持 service 關鍵字 (service定義遠端 funcion call 的呼叫)，因此需要NuGet上
 下載一個外掛 grpc tools (裡面包含 grpc_cshapr_plugin.exe) 來完成 service 的編譯。
