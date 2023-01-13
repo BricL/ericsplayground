@@ -3,7 +3,7 @@
 * [C# Reflection](#1)
 * [C# 字串內插補點$ + string](#2)
 * [C# 7.0 Function Return 多個值](#3)
-* [C# gRPC](#4)
+* [C# gRPC起手式](#4)
 
 ---
 
@@ -81,7 +81,7 @@ static void Main (string[] args) {
 
 <span id="4"></span>
 
-## :sunny:C#  gRPC
+## :sunny:C#  gRPC起手式
 
 ### RPC 定義：
 
