@@ -91,7 +91,7 @@ PRC(Remote Procedure Call) 簡單說就是 “用戶端” 在與 “服務端�
 var reply = await client.SayHelloAsync( new HelloRequest { Name = "GreeterClient" });
 ```
 
-從上面的範例看來，是不是完全不像跟遠端 “服務器” 發需求對吧！一切就像呼叫個非同步 API，這就是 PRC(Remote Procedure Call) 的精神。
+從上面的範例看來，是不是完全不像跟遠端 “服務器” 發出請求吧！一切就像個非同步 function 的呼叫，這就是 PRC(Remote Procedure Call) 的精神。
 
 ### Protobuf:
 
