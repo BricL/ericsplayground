@@ -91,13 +91,11 @@ PRC(Remote Procedure Call) 簡單說就是 “用戶端” 在與 “服務端�
 var reply = await client.SayHelloAsync( new HelloRequest { Name = "GreeterClient" });
 ```
 
-從上面的範例看來，是不是完全不像跟遠端 “服務器” 發出請求吧！一切就像個非同步 function 的呼叫，這就是 PRC(Remote Procedure Call) 的精神。
+從上面的範例看來，是不是完全不像跟 “服務端” 發出請求吧！一切就像個本地非同步 function 呼叫，這就是 PRC(Remote Procedure Call) 的精神。
 
 ### Protobuf:
 
 由 Google 主導，一種描述式語法用來描述傳輸間的資料結構。有別於JSON的文字格式，Protobuf 在經過編譯(Protobuf Compiler)後，可以成為任何語言(JAVA、C#、Go...etc）的型別定義，藉此達到 序列化/反序列化，讓傳輸採資料更小速、度更快的二進位格式。
-
-一個 Greeter.proto 的範例如下：
 
 ```protobuf
 syntax = "proto3";
@@ -130,6 +128,67 @@ message HelloReply {
 * service Greeter，一個 RPC 的 funciton call 的定義
 
 這些定義再透過 Protobuf Compiler 編譯後，就能成為你指定想要使用的語言 class 與 funciton 定義。客戶端與服務端的實踐，可以是不同語言，但彼此間的溝通與傳輸的資料定義，都會遵守上面 *.proto 描述的定義。
+
+### Service
+
+作為一個 Remote Function Call 的定義，在經過編譯後會分別對 “客戶端”、“服務端” 產生 2 種不同的 Type。
+
+對 “服務端” 來說：
+
+* 會生成一個 base class 做為基底，你需要繼承這個基底 class 實踐 Greeter.proto 所描述的 RPC。
+
+  ```csharp
+
+
+  [grpc::BindServiceMethod(typeof(Greeter), "BindService")]
+  public abstract partial class GreeterBase
+  {
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::myGrpcTesting.HelloR
+  eply>   SayHello(global::myGrpcTesting.HelloRequest request, grpc::ServerCallContext context)
+      {
+          throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+  }
+
+  /// 以下為實作部分...
+
+  using Grpc.Core;
+  using myGrpcTesting;
+
+  namespace myGrpcTesting.Services;
+
+  public class GreeterService : Greeter.GreeterBase
+  {
+      private readonly ILogger<GreeterService> _logger;
+      public GreeterService(ILogger<GreeterService> logger)
+      {
+          _logger = logger;
+      }
+
+      public override Task<HelloReply> SayHello(HelloRequest request, ServerCallContext context)
+      {
+          return Task.FromResult(new HelloReply
+          {
+              Message = "Hello " + request.Name
+          });
+      }
+  }
+  ```
+
+對用戶端來說：
+
+* 會生成一個呼叫 RPC 的類別，透過給予連線設定進行建立，然後呼叫等待結果
+  ```csharp
+  // The port number must match the port of the gRPC server.
+  using var channel = GrpcChannel.ForAddress("https://localhost:7042");
+  var client = new Greeter.GreeterClient(channel);
+  var reply = await client.SayHelloAsync(
+                    new HelloRequest { Name = "GreeterClient" });
+  Console.WriteLine("Greeting: " + reply.Message);
+  Console.WriteLine("Press any key to exit...");
+  Console.ReadKey();
+  ```
 
 ### 套件功能說明：
 
