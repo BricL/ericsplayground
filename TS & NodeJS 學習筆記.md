@@ -5,8 +5,6 @@
 * [mySQL 套件](#4)
 * [ORM 套件](#5)
 
----
-
 <span id="1"></span>  
 
 ## :sunny:初始化 TS 專案在 vscode
