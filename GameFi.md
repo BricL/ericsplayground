@@ -61,7 +61,7 @@ ERC-1155 的用途為再製、包裝或組合一個至多個 Token Type 或 NFT 
 
 <span id="4"></span>
 
-## 智能合約
+## :sunny:智能合約
 
 智能合約是一種將雙方的協議條款，並用代碼形式在區塊鏈上運行，儲存在一個公共資料庫中，不能被更改。
 
@@ -74,7 +74,7 @@ ERC-1155 的用途為再製、包裝或組合一個至多個 Token Type 或 NFT 
 
 <span id="5"></span>
 
-## 文章收集
+## :sunny:文章收集
 * FTX 風投負責人談 Axie、Stepn 與 Gamefi：「我認為目前沒有有趣的區塊鏈遊戲」(2022-05-26)  
 https://www.blocktempo.com/interview-with-ftx-ventures-head-amy-about-stepn-axie-and-gamefi/
 * Luna幣崩盤沒在怕？日本率先合法「穩定幣」為哪樁？(2022-06-09) 
