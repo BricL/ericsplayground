@@ -5,7 +5,8 @@
 * [代幣編碼](#3)
 * [智能合約](#4)
 * [穩定幣 (Stablecoin)](#5)
-* [文章收集](#6)
+* [Oasys Blockchain for Game](#6)
+* [文章收集](#7)
 
 <span id="1"></span>
 
@@ -97,8 +98,13 @@ ERC-1155 的用途為再製、包裝或組合一個至多個 Token Type 或 NFT 
 
 比特幣被定義為開源的、透明的，而泰達幣卻從未經過適當的審計，並且一直未正面回答有關其儲備的問題。比特幣被譽為一種略過作為中間人的金融機構的工具，而泰達公司即是一個中間人，所以在監管機構的要求下，它可以將特定用戶列入黑名單。
 
-
 <span id="6"></span>
+
+## Oasys Blockchain for Game
+官網URL https://www.oasys.games/
+
+
+<span id="7"></span>
 
 ## :sunny:文章收集
 
