@@ -110,17 +110,23 @@ ERC-1155 的用途為再製、包裝或組合一個至多個 Token Type 或 NFT 
 
 * FTX 風投負責人談 Axie、Stepn 與 Gamefi：「我認為目前沒有有趣的區塊鏈遊戲」(2022-05-26)
   https://www.blocktempo.com/interview-with-ftx-ventures-head-amy-about-stepn-axie-and-gamefi/
-* Luna幣崩盤沒在怕？日本率先合法「穩定幣」為哪樁？(2022-06-09)
+* Luna幣崩盤沒在怕？日本率先合法「穩定幣」為哪樁？(2022-06-09)  
+
   https://www.gvm.com.tw/article/90720
-* 穩定幣是什麼？價格波動真的較小？從最早發行的穩定幣 USDT 說起
+* 穩定幣是什麼？價格波動真的較小？從最早發行的穩定幣 USDT 說起  
+
   https://www.managertoday.com.tw/articles/view/65404?
-* 穩定幣是什麼？算法穩定幣是什麼？穩定幣分哪些種類
+* 穩定幣是什麼？算法穩定幣是什麼？穩定幣分哪些種類  
+
   https://bshare.io/stablecoin/stablecoin_1/
-* Crypto Tokens vs Coins — What’s the Difference?
+* Crypto Tokens vs Coins — What’s the Difference?  
+
   https://crypto.com/university/crypto-tokens-vs-coins-difference
-* 智能合約是什麼意思？有什麼優點與缺點要注意？
+* 智能合約是什麼意思？有什麼優點與缺點要注意？  
+
   https://rich01.com/what-is-smart-contract/
-* 什麼是 ERC-20、ERC-721、ERC-1155？差別為何？NFT 是哪一種？
+* 什麼是 ERC-20、ERC-721、ERC-1155？差別為何？NFT 是哪一種？  
+
   https://bshare.io/nft/erc20_721_1155/
 
 ---
