@@ -228,17 +228,16 @@ using (var input = File.OpenRead("john.dat"))
 
 ### protoc 編譯器：
 
-主要編譯 .proto 檔中 message 編譯成目標語言，如：Person.proto >> Person.cs。
+負責編譯 .proto 內的描述語言成目標語言，如：Person.proto >> Person.cs。安裝方式請參考[官方網站](https://grpc.io/docs/protoc-installation/)。
 
 ### grpc_cshapr_plugin 外掛器：
 
-Protoc 在 c# 的編譯上並不支持 service 關鍵字 (service定義遠端 funcion call 的呼叫)，因此需要NuGet上
-下載一個外掛 grpc tools (裡面包含 grpc_cshapr_plugin.exe) 來完成 service 的編譯。
+protoc 對 c# 的編譯上不支持 service 關鍵字，需要用 [NuGet 下載外掛 grpc tools](//https://www.nuget.org/packages/Grpc.Tools/) 裡面包含 grpc_cshapr_plugin.exe 的 protoc 外掛，來完成 service 的編譯。
 
-呈上，因此一個 Person.proto 檔案在編譯後會出現兩個檔案：
+一個 person.proto 在編譯後會有 2 個檔案：
 
 1. Person.cs (定義傳輸資料)
-2. PersonGrpc.cs (定義遠端function call的呼叫) 在 Unity 與 Server 採 gRPC 連線下，用戶端同時需要這兩個檔案。
+2. PersonGrpc.cs (定義遠端 function call 的呼叫) 在 Unity 與 Server 採 gRPC 連線下，用戶端同時需要這兩個檔案。
 
 ### Sample：
 
