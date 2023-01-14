@@ -70,29 +70,26 @@ ERC-1155 的用途為再製、包裝或組合一個至多個 Token Type 或 NFT 
 3. 智能合約的需求規格不夠嚴謹時，會造成開發人員誤解需求，而導致程式的執行結果與用戶的預期不符。另外，也有許多法律方面的議題與挑戰要考慮。
 4. 智能合約在區塊鏈平台做程式化的資產移轉，而這些資產都是加密貨幣(數位資產)，會必須承擔交易加密貨幣的風險。
 
-
+![智能合約](https://github.com/BricL/ericsplayground/blob/main/images/%E6%99%BA%E8%83%BD%E5%90%88%E7%B4%84.jpg)  
 
 <span id="5"></span>
 
 ## :sunny:文章收集
-* FTX 風投負責人談 Axie、Stepn 與 Gamefi：「我認為目前沒有有趣的區塊鏈遊戲」(2022-05-26)  
-https://www.blocktempo.com/interview-with-ftx-ventures-head-amy-about-stepn-axie-and-gamefi/
-* Luna幣崩盤沒在怕？日本率先合法「穩定幣」為哪樁？(2022-06-09) 
-https://www.gvm.com.tw/article/90720
-* 穩定幣是什麼？價格波動真的較小？從最早發行的穩定幣 USDT 說起    
-https://www.managertoday.com.tw/articles/view/65404?
-* 穩定幣是什麼？算法穩定幣是什麼？穩定幣分哪些種類   
-https://bshare.io/stablecoin/stablecoin_1/
-* Crypto Tokens vs Coins — What’s the Difference?  
-https://crypto.com/university/crypto-tokens-vs-coins-difference
+
+* FTX 風投負責人談 Axie、Stepn 與 Gamefi：「我認為目前沒有有趣的區塊鏈遊戲」(2022-05-26)
+  https://www.blocktempo.com/interview-with-ftx-ventures-head-amy-about-stepn-axie-and-gamefi/
+* Luna幣崩盤沒在怕？日本率先合法「穩定幣」為哪樁？(2022-06-09)
+  https://www.gvm.com.tw/article/90720
+* 穩定幣是什麼？價格波動真的較小？從最早發行的穩定幣 USDT 說起
+  https://www.managertoday.com.tw/articles/view/65404?
+* 穩定幣是什麼？算法穩定幣是什麼？穩定幣分哪些種類
+  https://bshare.io/stablecoin/stablecoin_1/
+* Crypto Tokens vs Coins — What’s the Difference?
+  https://crypto.com/university/crypto-tokens-vs-coins-difference
 * 智能合約是什麼意思？有什麼優點與缺點要注意？
-	https://rich01.com/what-is-smart-contract/
-* 什麼是 ERC-20、ERC-721、ERC-1155？差別為何？NFT 是哪一種？  
-https://bshare.io/nft/erc20_721_1155/
-
-
-
-
+  https://rich01.com/what-is-smart-contract/
+* 什麼是 ERC-20、ERC-721、ERC-1155？差別為何？NFT 是哪一種？
+  https://bshare.io/nft/erc20_721_1155/
 
 ---
 
