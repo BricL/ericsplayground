@@ -269,14 +269,6 @@ Test.proto 範例
 > --grpc_out=output
 > --plugin=protoc-gen-grpc=tools\grpc_csharp_plugin.exe
 
-### 結論：
-
-由此可知，上海 Jenkins 流程中有一段是專門針對 .proto 進行打包的部分，大致推測如下：
-
-1. protoc 編譯
-2. grpc_csharp_pluing 編譯
-3. 將上述所有 *.cs 進行 *.dll 打包
-
 ---
 
 <br>
