@@ -127,4 +127,4 @@ ERC-1155 的用途為再製、包裝或組合一個至多個 Token Type 或 NFT 
 
 <br>
 
-[返回目錄](https://github.com/BricL/ericsplayground/blob/main/README.md)
+[返回目錄](/README.md)
