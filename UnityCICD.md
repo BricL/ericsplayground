@@ -26,4 +26,4 @@
 
 <br>
 
-[返回目錄](https://github.com/BricL/ericsplayground/blob/main/README.md)
+[返回目錄](/README.md)
