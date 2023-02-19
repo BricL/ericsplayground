@@ -1,6 +1,6 @@
 # 艾瑞克的學習筆記
 
-## Formalin
+## Formalin Game Studio
 * [Formalin Game Studio](/docs/FormalinGameStudio.md)
 
 * [GTI 18 ASIA CHINA EXPO: Dead Road Smoke](/docs/GTI18_ASIA_CHINA_EXPO%3ADeadRoadSmoke.md)
