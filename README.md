@@ -2,6 +2,8 @@
 
 * [Formalin Game Studio](/docs/FormalinGameStudio.md)
 
+* [GTI 18 ASIA CHINA EXPO: Dead Road Smoke](/docs/GTI18_ASIA_CHINA_EXPO%3ADeadRoadSmoke.md)
+
 * [TS & NodeJS 學習筆記](/docs/TS%20%26%20NodeJS%20%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98.md)
 
 * [C#學習筆記](/docs/C%23%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98.md)
