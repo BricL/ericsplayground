@@ -1,12 +1,13 @@
 # Catalog：
 
+Hi, we are indie game developer from Taiwan. The list below are all projects were developed by our self. Thanks for coming and hope you like it~
+
 * [Dead Road Smoke](#1)
 * [Wagon Shootout](#2)
 * [Kung Fu Go](#3)
 * [Baseball Warriors](#4)
 * [Kingdom Knights Quiz](#5)
 
-Hi, we are indie game developer from Taiwan. The list below are all projects were developed by our self. Thanks for coming and hope you like it~
 
 # Original Project
 
